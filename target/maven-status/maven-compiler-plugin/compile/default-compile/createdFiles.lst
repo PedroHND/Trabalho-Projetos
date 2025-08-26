@@ -1,0 +1,10 @@
+model\PerfilVendedor.class
+view\MainMDI.class
+model\Defeito.class
+view\MainMDI$2.class
+model\Produto.class
+model\PerfilComprador.class
+model\Usuario.class
+view\MainMDI$1.class
+main\Main.class
+presenter\MainMDIPresenter.class
