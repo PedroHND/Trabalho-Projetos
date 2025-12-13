@@ -2,18 +2,16 @@ package presenter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import log.LogWriter;
 import repository.UsuarioRepository;
-import view.BuscarProdutos;
+import view.BuscarUsuarios;
 
-public class BuscarProdutosPresenter {
-    private BuscarProdutos tela;
+public class BuscarUsuariosPresenter {
+    private BuscarUsuarios tela;
     private UsuarioRepository repositorio;
     
-    public BuscarProdutosPresenter(LogWriter log){
-        tela = new BuscarProdutos();
+    public BuscarUsuariosPresenter(){
+        tela = new BuscarUsuarios();
         tela.setVisible(true);
-        
         
         //Action Listeners
         tela.getFecharBtn().addActionListener(new ActionListener(){
@@ -26,7 +24,7 @@ public class BuscarProdutosPresenter {
         tela.getNovoBtn().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                new AdicionarProdutoPresenter(tela, log);
+                new AdicionarUsuarioPresenter(tela);
             }
         });
         
@@ -34,11 +32,10 @@ public class BuscarProdutosPresenter {
             @Override
             public void actionPerformed(ActionEvent e){
                 int row = tela.getUsuariosTable().getSelectedRow();               
-                //new VizualizarUsuarioPresenter(tela, repositorio.getInstance().getUsuariosRepository().get(row));
+                new VizualizarUsuarioPresenter(tela, repositorio.getInstance().getUsuariosRepository().get(row));
             }
         });
 
         
     }
-
 }

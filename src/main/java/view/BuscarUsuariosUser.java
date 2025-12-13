@@ -15,12 +15,12 @@ import javax.swing.JTextField;
  *
  * @author bcarr
  */
-public class BuscarProdutos extends javax.swing.JFrame {
+public class BuscarUsuarios extends javax.swing.JFrame {
 
     /**
      * Creates new form BuscarUsuarios
      */
-    public BuscarProdutos() {
+    public BuscarUsuarios() {
         initComponents();
     }
 
@@ -64,14 +64,14 @@ public class BuscarProdutos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Peso", "Tipo", "Subtipo", "Vendedor", "Preço Base", "Preço Descontado"
+                "Nome", "Email", "Telefone", "Comprador", "Vendedor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -83,6 +83,13 @@ public class BuscarProdutos extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(usuariosTable);
+        if (usuariosTable.getColumnModel().getColumnCount() > 0) {
+            usuariosTable.getColumnModel().getColumn(0).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(1).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(2).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(3).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,21 +155,20 @@ public class BuscarProdutos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuscarProdutos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuscarProdutos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuscarProdutos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuscarProdutos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarProdutos().setVisible(true);
+                new BuscarUsuarios().setVisible(true);
             }
         });
     }
