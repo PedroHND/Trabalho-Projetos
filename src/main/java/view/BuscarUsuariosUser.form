@@ -28,8 +28,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="novoBtn" min="-2" pref="95" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="visualizarBtn" min="-2" pref="95" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="fecharBtn" min="-2" pref="95" max="-2" attributes="0"/>
@@ -59,7 +57,6 @@
               <Component id="jScrollPane1" min="-2" pref="164" max="-2" attributes="0"/>
               <EmptySpace pref="33" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="novoBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="visualizarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fecharBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -72,11 +69,6 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Busca Por Nome:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="novoBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Novo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="visualizarBtn">
@@ -109,38 +101,20 @@
         <Component class="javax.swing.JTable" name="usuariosTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="5" rowCount="0">
+              <Table columnCount="2" rowCount="0">
                 <Column editable="false" title="Nome" type="java.lang.String"/>
-                <Column editable="false" title="Email" type="java.lang.String"/>
-                <Column editable="false" title="Telefone" type="java.lang.String"/>
-                <Column editable="false" title="Comprador" type="java.lang.Boolean"/>
-                <Column editable="false" title="Vendedor" type="java.lang.Boolean"/>
+                <Column editable="false" title="Usuario" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Nome"/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Usuario"/>
                   <Editor/>
                   <Renderer/>
                 </Column>

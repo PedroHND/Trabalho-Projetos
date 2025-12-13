@@ -35,20 +35,12 @@ public class AdicionarUsuario extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         NomeTextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        emailTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         usuarioTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         senhaTextField = new javax.swing.JPasswordField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        compradorCheckBox = new javax.swing.JCheckBox();
-        vendedorCheckBox = new javax.swing.JCheckBox();
         salvarBtn = new javax.swing.JButton();
         cancelarBtn = new javax.swing.JButton();
-        telefoneTextField = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -60,16 +52,6 @@ public class AdicionarUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Email");
-
-        emailTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTextFieldActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Telefone");
-
         jLabel4.setText("Usuario");
 
         usuarioTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -80,58 +62,36 @@ public class AdicionarUsuario extends javax.swing.JFrame {
 
         jLabel5.setText("Senha");
 
-        jLabel7.setText("Comprador?");
-
-        jLabel8.setText("Vendedor?");
-
         salvarBtn.setText("Salvar");
 
         cancelarBtn.setText("Cancelar");
-
-        telefoneTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5)
                             .addComponent(usuarioTextField)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(emailTextField)
-                            .addComponent(jLabel2)
                             .addComponent(NomeTextField)
                             .addComponent(jLabel1)
                             .addComponent(senhaTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(telefoneTextField))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(compradorCheckBox)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(vendedorCheckBox))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(34, 34, 34)
+                        .addComponent(salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(usuarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,30 +99,15 @@ public class AdicionarUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(telefoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(senhaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(compradorCheckBox))
-                    .addComponent(vendedorCheckBox))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarBtn)
                     .addComponent(salvarBtn))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(134, 134, 134))
         );
 
         pack();
@@ -171,10 +116,6 @@ public class AdicionarUsuario extends javax.swing.JFrame {
     private void NomeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeTextFieldActionPerformed
-
-    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void usuarioTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTextFieldActionPerformed
         // TODO add your handling code here:
@@ -218,20 +159,12 @@ public class AdicionarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NomeTextField;
     private javax.swing.JButton cancelarBtn;
-    private javax.swing.JCheckBox compradorCheckBox;
-    private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JButton salvarBtn;
     private javax.swing.JPasswordField senhaTextField;
-    private javax.swing.JFormattedTextField telefoneTextField;
     private javax.swing.JTextField usuarioTextField;
-    private javax.swing.JCheckBox vendedorCheckBox;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getNomeTextField() {
@@ -242,13 +175,6 @@ public class AdicionarUsuario extends javax.swing.JFrame {
         return cancelarBtn;
     }
 
-    public JCheckBox getCompradorCheckBox() {
-        return compradorCheckBox;
-    }
-
-    public JTextField getEmailTextField() {
-        return emailTextField;
-    }
 
     public JButton getSalvarBtn() {
         return salvarBtn;
@@ -262,13 +188,6 @@ public class AdicionarUsuario extends javax.swing.JFrame {
         return usuarioTextField;
     }
 
-    public JCheckBox getVendedorCheckBox() {
-        return vendedorCheckBox;
-    }
-
-    public JFormattedTextField getTelefoneTextField() {
-        return telefoneTextField;
-    }
     
     
 }

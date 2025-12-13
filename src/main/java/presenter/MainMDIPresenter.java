@@ -5,13 +5,16 @@ import java.awt.event.ActionListener;
 import log.CsvLogWriter;
 import log.JsonLogWriter;
 import log.LogWriter;
+import model.Usuario;
 import view.MainMDI;
 
 public class MainMDIPresenter {
     private MainMDI tela = new MainMDI();
     private LogWriter logger;
+    private Usuario usuario;
     
-    public MainMDIPresenter(){
+    public MainMDIPresenter(Usuario usuario){
+        this.usuario = usuario;
         tela.setVisible(true);
         tela.getLogComboBox().setSelectedIndex(0);
         changeLog();
@@ -26,16 +29,14 @@ public class MainMDIPresenter {
         tela.getBuscarUsuariosMenu().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                new BuscarUsuariosPresenter();
+                if(usuario.isAdm() == true){
+                new BuscarUsuariosPresenter(usuario);
+                }else{
+                    new BuscarUsuariosUserPresenter(usuario);
+                }
             }
         });        
        
-        tela.getBuscarProdutosMenu().addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                new BuscarProdutosPresenter(logger);
-            }
-        });
         
         tela.getAplicarBtn().addActionListener(new ActionListener(){
             @Override
@@ -43,6 +44,13 @@ public class MainMDIPresenter {
                 changeLog();
             }
         });
+        
+        tela.getListarNotificacaoMenu().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                new ListaNotificacaoPresenter(usuario);
+            }
+        });        
     }    
                   
     public void changeLog(){

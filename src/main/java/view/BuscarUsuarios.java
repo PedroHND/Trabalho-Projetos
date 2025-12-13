@@ -41,6 +41,8 @@ public class BuscarUsuarios extends javax.swing.JFrame {
         buscarBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         usuariosTable = new javax.swing.JTable();
+        notificarBtn = new javax.swing.JButton();
+        tornarAdmBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -64,14 +66,14 @@ public class BuscarUsuarios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Email", "Telefone", "Comprador", "Vendedor"
+                "Nome", "Usuario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -85,11 +87,21 @@ public class BuscarUsuarios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(usuariosTable);
         if (usuariosTable.getColumnModel().getColumnCount() > 0) {
             usuariosTable.getColumnModel().getColumn(0).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(0).setHeaderValue("Nome");
             usuariosTable.getColumnModel().getColumn(1).setResizable(false);
-            usuariosTable.getColumnModel().getColumn(2).setResizable(false);
-            usuariosTable.getColumnModel().getColumn(3).setResizable(false);
-            usuariosTable.getColumnModel().getColumn(4).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(1).setHeaderValue("Usuario");
         }
+
+        notificarBtn.setText("Notificar");
+        notificarBtn.setToolTipText("");
+        notificarBtn.setEnabled(false);
+
+        tornarAdmBtn.setText("Tornar ADM");
+        tornarAdmBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tornarAdmBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,16 +112,21 @@ public class BuscarUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(novoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(visualizarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(fecharBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(buscarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buscarBtn)))
+                        .addComponent(buscarBtn))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(novoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(visualizarBtn)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(notificarBtn)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(tornarAdmBtn)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(fecharBtn))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -127,7 +144,9 @@ public class BuscarUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(novoBtn)
                     .addComponent(visualizarBtn)
-                    .addComponent(fecharBtn))
+                    .addComponent(fecharBtn)
+                    .addComponent(notificarBtn)
+                    .addComponent(tornarAdmBtn))
                 .addGap(24, 24, 24))
         );
 
@@ -137,6 +156,10 @@ public class BuscarUsuarios extends javax.swing.JFrame {
     private void fecharBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecharBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fecharBtnActionPerformed
+
+    private void tornarAdmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tornarAdmBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tornarAdmBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,7 +202,9 @@ public class BuscarUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton fecharBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton notificarBtn;
     private javax.swing.JButton novoBtn;
+    private javax.swing.JButton tornarAdmBtn;
     private javax.swing.JTable usuariosTable;
     private javax.swing.JButton visualizarBtn;
     // End of variables declaration//GEN-END:variables
@@ -215,7 +240,13 @@ public class BuscarUsuarios extends javax.swing.JFrame {
     public JButton getVisualizarBtn() {
         return visualizarBtn;
     }
+
+    public JButton getNotificarBtn() {
+        return notificarBtn;
+    }
     
-    
+    public JButton getTornarAdmBtn() {
+        return tornarAdmBtn;
+    }
 
 }

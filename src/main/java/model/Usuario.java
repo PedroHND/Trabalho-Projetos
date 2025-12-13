@@ -1,36 +1,27 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Usuario {
     private double id;
     private String nome;
-    private String email;
-    private String telefone;
+    private String usuario;
     private LocalDate dataDeCriacao;
     private Map <String, String> credenciais;
     private boolean adm;
-    private PerfilComprador perfilComprador;
-    private PerfilVendedor perfilVendedor;
-    private boolean comprador;
-    private boolean vendedor;
+    private ArrayList <Notificacao> mensagens;
 
-    public Usuario(double id, String nome, String email, String telefone, Map <String,String> credenciais, boolean comprador, boolean vendedor) {
+    public Usuario(double id, String nome, Map<String, String> credenciais, String usuario) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.credenciais = credenciais;
         this.dataDeCriacao = LocalDate.now();
-        this.adm = false;
-        this.comprador = comprador;
-        this.vendedor = vendedor;
-        if(comprador == true)
-            this.perfilComprador = new PerfilComprador();
-        if(vendedor == true)
-            this.perfilVendedor = new PerfilVendedor();
+        this.credenciais = credenciais;
+        this.usuario = usuario;
+        this.mensagens = new ArrayList<Notificacao>();
     }
+
 
     public double getId() {
         return id;
@@ -38,14 +29,6 @@ public class Usuario {
 
     public String getNome() {
         return nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTelefone() {
-        return telefone;
     }
 
     public LocalDate getDataDeCriacao() {
@@ -60,27 +43,18 @@ public class Usuario {
         return adm;
     }
 
-    public PerfilComprador getPerfilComprador() {
-        return perfilComprador;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public PerfilVendedor getPerfilVendedor() {
-        return perfilVendedor;
+    public ArrayList<Notificacao> getMensagens() {
+        return mensagens;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + ", dataDeCriacao=" + dataDeCriacao + ", credenciais=" + credenciais + ", adm=" + adm + ", perfilComprador=" + perfilComprador + ", perfilVendedor=" + perfilVendedor + ", comprador=" + comprador + ", vendedor=" + vendedor + '}';
-    }
-
-    public boolean isComprador() {
-        return comprador;
-    }
-
-    public boolean isVendedor() {
-        return vendedor;
+    public void setAdm(boolean adm) {
+        this.adm = adm;
     }
     
     
-    
+      
 }

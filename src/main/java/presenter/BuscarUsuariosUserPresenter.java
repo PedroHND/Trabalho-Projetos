@@ -2,15 +2,26 @@ package presenter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.Usuario;
+import observer.Publisher;
+import observer.UsuariosTableObserver;
 import repository.UsuarioRepository;
 import view.BuscarUsuarios;
 
-public class BuscarUsuariosPresenter {
+public class BuscarUsuariosUserPresenter {
     private BuscarUsuarios tela;
+    private UsuariosTableObserver tableObserver;
     private UsuarioRepository repositorio;
+    private Publisher publisher;
+    private MensagemPresenter mensagem;
+    private Usuario destinatario;
     
-    public BuscarUsuariosPresenter(){
+    public BuscarUsuariosUserPresenter(Usuario usuario){
         tela = new BuscarUsuarios();
+        publisher = new Publisher();
+        tableObserver = new UsuariosTableObserver(tela, repositorio.getInstance());
+        publisher.addSubscriber(tableObserver);
+        publisher.notifySubscribers();
         tela.setVisible(true);
         
         //Action Listeners
@@ -21,13 +32,6 @@ public class BuscarUsuariosPresenter {
             }
         });
         
-        tela.getNovoBtn().addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                new AdicionarUsuarioPresenter(tela);
-            }
-        });
-        
         tela.getVisualizarBtn().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -35,7 +39,6 @@ public class BuscarUsuariosPresenter {
                 new VizualizarUsuarioPresenter(tela, repositorio.getInstance().getUsuariosRepository().get(row));
             }
         });
-
         
     }
 }

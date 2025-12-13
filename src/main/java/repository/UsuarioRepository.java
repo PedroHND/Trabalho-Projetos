@@ -3,7 +3,7 @@ package repository;
 import java.util.ArrayList;
 import model.Usuario;
 
-public class UsuarioRepository implements IUsuarioRepository {
+public class UsuarioRepository implements IUsuarioRepository { 
     private static UsuarioRepository instance;
     private ArrayList<Usuario> usuariosRepository;
     private double idAtual;

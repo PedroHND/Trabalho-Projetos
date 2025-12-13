@@ -35,17 +35,11 @@ public class VizualizarUsuario extends javax.swing.JFrame {
         editarBtn = new javax.swing.JButton();
         excluirBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         nomeTextBox = new javax.swing.JTextField();
-        emailTextBox = new javax.swing.JTextField();
-        telefoneTextBox = new javax.swing.JTextField();
+        usuarioTextBox = new javax.swing.JTextField();
         dataTextBox = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,19 +49,13 @@ public class VizualizarUsuario extends javax.swing.JFrame {
 
         excluirBtn.setText("Excluir");
 
-        jLabel1.setText("Nome");
+        jLabel1.setText("Nome:");
 
-        jLabel2.setText("Telefone");
-
-        jLabel3.setText("Email");
+        jLabel3.setText("Usuario:");
 
         jLabel4.setText("Data de Criação:");
 
         dataTextBox.setEditable(false);
-
-        jLabel5.setText("Vendedor:");
-
-        jLabel6.setText("Comprador:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,29 +65,17 @@ public class VizualizarUsuario extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addComponent(jLabel4)
                     .addComponent(nomeTextBox)
-                    .addComponent(emailTextBox)
-                    .addComponent(telefoneTextBox)
+                    .addComponent(usuarioTextBox)
                     .addComponent(dataTextBox)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(excluirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(editarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(12, 12, 12)
-                                .addComponent(jCheckBox2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6)))
+                        .addComponent(excluirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(fecharBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(editarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(fecharBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
@@ -112,24 +88,12 @@ public class VizualizarUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(telefoneTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dataTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jCheckBox1)))
-                    .addComponent(jCheckBox2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(usuarioTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dataTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fecharBtn)
                     .addComponent(editarBtn)
@@ -178,19 +142,13 @@ public class VizualizarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dataTextBox;
     private javax.swing.JButton editarBtn;
-    private javax.swing.JTextField emailTextBox;
     private javax.swing.JButton excluirBtn;
     private javax.swing.JButton fecharBtn;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField nomeTextBox;
-    private javax.swing.JTextField telefoneTextBox;
+    private javax.swing.JTextField usuarioTextBox;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getDataTextBox() {
@@ -201,8 +159,8 @@ public class VizualizarUsuario extends javax.swing.JFrame {
         return editarBtn;
     }
 
-    public JTextField getEmailTextBox() {
-        return emailTextBox;
+    public JTextField getUsuarioTextBox() {
+        return usuarioTextBox;
     }
 
     public JButton getExcluirBtn() {
@@ -213,21 +171,10 @@ public class VizualizarUsuario extends javax.swing.JFrame {
         return fecharBtn;
     }
 
-    public JCheckBox getjCheckBox1() {
-        return jCheckBox1;
-    }
-
-    public JCheckBox getjCheckBox2() {
-        return jCheckBox2;
-    }
-
     public JTextField getNomeTextBox() {
         return nomeTextBox;
     }
 
-    public JTextField getTelefoneTextBox() {
-        return telefoneTextBox;
-    }
 
     
 }

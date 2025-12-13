@@ -43,12 +43,9 @@ public class AdicionarUsuarioPresenter {
                 Map<String,String> credenciais = new HashMap();
                 credenciais.put(login, senha);
                 Usuario usuario = new Usuario(novoId, 
-                        tela.getNomeTextField().getText(), 
-                        tela.getEmailTextField().getText(),
-                        tela.getTelefoneTextField().getText(),
-                        credenciais,                         
-                        tela.getCompradorCheckBox().isSelected(),
-                        tela.getVendedorCheckBox().isSelected()
+                        tela.getNomeTextField().getText(),                                                
+                        credenciais,
+                        login
                 );
                 comando = new AdicionarContatoCommand(usuario, repositorio.getInstance());
                 comando.execute();

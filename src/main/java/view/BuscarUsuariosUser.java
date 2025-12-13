@@ -15,12 +15,12 @@ import javax.swing.JTextField;
  *
  * @author bcarr
  */
-public class BuscarUsuarios extends javax.swing.JFrame {
+public class BuscarUsuariosUser extends javax.swing.JFrame {
 
     /**
      * Creates new form BuscarUsuarios
      */
-    public BuscarUsuarios() {
+    public BuscarUsuariosUser() {
         initComponents();
     }
 
@@ -34,7 +34,6 @@ public class BuscarUsuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        novoBtn = new javax.swing.JButton();
         visualizarBtn = new javax.swing.JButton();
         fecharBtn = new javax.swing.JButton();
         buscarCampo = new javax.swing.JTextField();
@@ -45,8 +44,6 @@ public class BuscarUsuarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Busca Por Nome:");
-
-        novoBtn.setText("Novo");
 
         visualizarBtn.setText("Visualizar");
 
@@ -64,14 +61,14 @@ public class BuscarUsuarios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Email", "Telefone", "Comprador", "Vendedor"
+                "Nome", "Usuario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -85,10 +82,9 @@ public class BuscarUsuarios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(usuariosTable);
         if (usuariosTable.getColumnModel().getColumnCount() > 0) {
             usuariosTable.getColumnModel().getColumn(0).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(0).setHeaderValue("Nome");
             usuariosTable.getColumnModel().getColumn(1).setResizable(false);
-            usuariosTable.getColumnModel().getColumn(2).setResizable(false);
-            usuariosTable.getColumnModel().getColumn(3).setResizable(false);
-            usuariosTable.getColumnModel().getColumn(4).setResizable(false);
+            usuariosTable.getColumnModel().getColumn(1).setHeaderValue("Usuario");
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,8 +96,6 @@ public class BuscarUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(novoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(visualizarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(fecharBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -125,7 +119,6 @@ public class BuscarUsuarios extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(novoBtn)
                     .addComponent(visualizarBtn)
                     .addComponent(fecharBtn))
                 .addGap(24, 24, 24))
@@ -155,20 +148,21 @@ public class BuscarUsuarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuariosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuariosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuariosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuscarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarUsuariosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarUsuarios().setVisible(true);
+                new BuscarUsuariosUser().setVisible(true);
             }
         });
     }
@@ -179,7 +173,6 @@ public class BuscarUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton fecharBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton novoBtn;
     private javax.swing.JTable usuariosTable;
     private javax.swing.JButton visualizarBtn;
     // End of variables declaration//GEN-END:variables
@@ -208,14 +201,10 @@ public class BuscarUsuarios extends javax.swing.JFrame {
         return usuariosTable;
     }
 
-    public JButton getNovoBtn() {
-        return novoBtn;
-    }
+
 
     public JButton getVisualizarBtn() {
         return visualizarBtn;
     }
-    
-    
 
 }

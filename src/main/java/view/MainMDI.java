@@ -34,6 +34,10 @@ public class MainMDI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         desktopPane = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -43,8 +47,16 @@ public class MainMDI extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         buscarUsuariosMenu = new javax.swing.JMenuItem();
         sairMenu = new javax.swing.JMenuItem();
-        ProdutosMenu = new javax.swing.JMenu();
-        buscarProdutosMenu = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        listarNotificacaoMenu = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +96,7 @@ public class MainMDI extends javax.swing.JFrame {
         );
 
         desktopPane.add(jPanel1);
-        jPanel1.setBounds(270, 20, 200, 150);
+        jPanel1.setBounds(340, 10, 200, 150);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Usuarios");
@@ -108,12 +120,12 @@ public class MainMDI extends javax.swing.JFrame {
 
         menuBar.add(fileMenu);
 
-        ProdutosMenu.setText("Produtos");
+        jMenu3.setText("Notificacões");
 
-        buscarProdutosMenu.setText("Buscar Produtos");
-        ProdutosMenu.add(buscarProdutosMenu);
+        listarNotificacaoMenu.setText("Listar Notificações");
+        jMenu3.add(listarNotificacaoMenu);
 
-        menuBar.add(ProdutosMenu);
+        menuBar.add(jMenu3);
 
         setJMenuBar(menuBar);
 
@@ -176,23 +188,24 @@ public class MainMDI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu ProdutosMenu;
     private javax.swing.JButton aplicarBtn;
-    private javax.swing.JMenuItem buscarProdutosMenu;
     private javax.swing.JMenuItem buscarUsuariosMenu;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem listarNotificacaoMenu;
     private javax.swing.JComboBox<String> logComboBox;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem sairMenu;
     // End of variables declaration//GEN-END:variables
 
 
-    public JMenuItem getBuscarProdutoMenu() {
-        return buscarProdutosMenu;
-    }
 
     public JMenuItem getBuscarUsuariosMenu() {
         return buscarUsuariosMenu;
@@ -206,17 +219,11 @@ public class MainMDI extends javax.swing.JFrame {
         return fileMenu;
     }
 
-    public JMenu getjMenu1() {
-        return ProdutosMenu;
-    }
 
     public JMenuItem getSairMenu() {
         return sairMenu;
     }
 
-    public JMenuItem getBuscarProdutosMenu() {
-        return buscarProdutosMenu;
-    }
 
     public JButton getAplicarBtn() {
         return aplicarBtn;
@@ -225,6 +232,12 @@ public class MainMDI extends javax.swing.JFrame {
     public JComboBox<String> getLogComboBox() {
         return logComboBox;
     }
+
+    public JMenuItem getListarNotificacaoMenu() {
+        return listarNotificacaoMenu;
+    }
+
+    
     
     
     

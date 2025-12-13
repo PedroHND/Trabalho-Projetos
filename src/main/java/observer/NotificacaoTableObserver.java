@@ -1,35 +1,33 @@
 package observer;
 
 import javax.swing.table.DefaultTableModel;
-import repository.UsuarioRepository;
-import view.BuscarUsuarios;
+import model.Usuario;
+import view.ListaNotificacao;
 
 
-public class UsuariosTableObserver implements Subscriber {
-    private BuscarUsuarios tela;
-    private UsuarioRepository repositorio;
+public class NotificacaoTableObserver implements Subscriber {
+    private ListaNotificacao tela;
+    private Usuario usuario;
 
-    public UsuariosTableObserver(BuscarUsuarios tela, UsuarioRepository repositorio) {
+    public NotificacaoTableObserver(ListaNotificacao tela, Usuario usuario) {
         this.tela = tela;
-        this.repositorio = repositorio;
+        this.usuario = usuario;   
     }
 
-    
-    
+       
     @Override
     public void update() {
-        DefaultTableModel model = (DefaultTableModel) tela.getUsuariosTable().getModel();
+        DefaultTableModel model = (DefaultTableModel) tela.getNotificacaoTable().getModel();
         model.setRowCount(0);
-        for(int i = 0; i < repositorio.getInstance().getUsuariosRepository().size(); i++){
+        for(int i = 0; i < usuario.getMensagens().size(); i++){
             model.addRow(
                     new Object[]{
-                    repositorio.getInstance().getUsuariosRepository().get(i).getNome(),
-                    repositorio.getInstance().getUsuariosRepository().get(i).getEmail(),
-                    repositorio.getInstance().getUsuariosRepository().get(i).getTelefone(),
-                    repositorio.getInstance().getUsuariosRepository().get(i).isComprador(),
-                    repositorio.getInstance().getUsuariosRepository().get(i).isVendedor()
-                    });
-                    }         
+                    usuario.getMensagens().get(i).getRemetente().getUsuario(),
+                    usuario.getMensagens().get(i).getDestinatario().getUsuario(),
+                    usuario.getMensagens().get(i).getDataDeEnvio().toString(),
+                    usuario.getMensagens().get(i).isLida()
+                    });                  
         }
     }
+}
     
