@@ -4,7 +4,6 @@ import command.AdicionarContatoCommand;
 import command.DeletarContatoCommand;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import model.Usuario;
 import observer.Publisher;
 import observer.UsuariosTableObserver;
@@ -12,7 +11,7 @@ import repository.UsuarioRepository;
 import view.BuscarUsuarios;
 import view.VizualizarUsuario;
 
-public class VizualizarUsuarioPresenter {
+public class VizualizarUsuarioUserPresenter {
     private VizualizarUsuario tela;
     private UsuarioRepository repositorio;
     private Publisher publisher;
@@ -20,7 +19,7 @@ public class VizualizarUsuarioPresenter {
     private AdicionarContatoCommand adicionar;
     private UsuariosTableObserver tableObserver;
 
-    public VizualizarUsuarioPresenter(BuscarUsuarios tela2, Usuario usuario) {
+    public VizualizarUsuarioUserPresenter(BuscarUsuarios tela2, Usuario usuario) {
         publisher = new Publisher();
         tableObserver = new UsuariosTableObserver(tela2, repositorio.getInstance());
         publisher.addSubscriber(tableObserver);
@@ -42,15 +41,11 @@ public class VizualizarUsuarioPresenter {
         tela.getExcluirBtn().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                if (usuario.equals(repositorio.getInstance()) || usuario.getId()==0){
-                    JOptionPane.showMessageDialog(null, "Não é possível se excluir ou excluir o ADM principal");
                 
-                }else{
-                    deletar = new DeletarContatoCommand(usuario, repositorio.getInstance());
-                    deletar.execute();
-                    publisher.notifySubscribers();
-                    tela.dispose();
-                }
+                deletar = new DeletarContatoCommand(usuario, repositorio.getInstance());
+                deletar.execute();
+                publisher.notifySubscribers();
+                tela.dispose();
             }
         });
 

@@ -36,7 +36,7 @@ public class BuscarUsuariosUserPresenter {
             @Override
             public void actionPerformed(ActionEvent e){
                 int row = tela.getUsuariosTable().getSelectedRow();               
-                new VizualizarUsuarioPresenter(tela, repositorio.getInstance().getUsuariosRepository().get(row));
+                new VizualizarUsuarioUserPresenter(tela, repositorio.getInstance().getUsuariosRepository().get(row));
             }
         });
         

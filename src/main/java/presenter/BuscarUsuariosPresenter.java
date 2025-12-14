@@ -51,12 +51,24 @@ public class BuscarUsuariosPresenter {
         tela.getTornarAdmBtn().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                int row = tela.getUsuariosTable().getSelectedRow();   
-                repositorio.getInstance().getUsuariosRepository().get(row).setAdm(true);
-                String mensagemSucesso = new String("O usuário. " + repositorio.getInstance().getUsuariosRepository().get(row).getUsuario() + " agora é um Administrador");  
-                JOptionPane.showMessageDialog(null, mensagemSucesso);
-                tela.dispose();
-                return;
+                int row = tela.getUsuariosTable().getSelectedRow(); 
+                if(repositorio.getInstance().getUsuariosRepository().get(row).isAdm()==false){
+                    repositorio.getInstance().getUsuariosRepository().get(row).setAdm(true);
+                    String mensagemSucesso = new String("O usuário. " + repositorio.getInstance().getUsuariosRepository().get(row).getUsuario() + " agora é um Administrador");  
+                    JOptionPane.showMessageDialog(null, mensagemSucesso);
+                    tela.dispose();
+                    return;
+                }else{
+                    if(repositorio.getInstance().getUsuariosRepository().get(row).getId()==0){
+                        JOptionPane.showMessageDialog(null, "O ADM principal não pode ser alterado");
+                    }else{
+                    repositorio.getInstance().getUsuariosRepository().get(row).setAdm(false);
+                    String mensagemSucesso = new String("O usuário. " + repositorio.getInstance().getUsuariosRepository().get(row).getUsuario() + " agora não é um Administrador");  
+                    JOptionPane.showMessageDialog(null, mensagemSucesso);
+                    tela.dispose();
+                    return;
+                    }
+                }
             }
         });
         

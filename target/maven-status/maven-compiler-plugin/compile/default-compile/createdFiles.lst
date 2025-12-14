@@ -1,6 +1,8 @@
 view\MainMDI.class
 view\MainMDI$1.class
 main\Main.class
+presenter\VizualizarUsuarioUserPresenter$3.class
+presenter\VizualizarUsuarioUserPresenter$1.class
 view\BuscarUsuariosUser$3.class
 presenter\MainMDIPresenter.class
 presenter\BuscarUsuariosUserPresenter.class
@@ -9,7 +11,11 @@ presenter\BuscarUsuariosUserPresenter$2.class
 view\BuscarUsuariosUser$2.class
 presenter\BuscarUsuariosUserPresenter$1.class
 model\Usuario.class
+presenter\VizualizarUsuarioUserPresenter$2.class
+view\VizualizarUsuarioUser$1.class
+view\VizualizarUsuarioUser.class
 view\BuscarUsuarios$4.class
 view\MainMDI$2.class
 presenter\BuscarUsuariosPresenter$5.class
 view\BuscarUsuariosUser$1.class
+presenter\VizualizarUsuarioUserPresenter.class
